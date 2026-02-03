@@ -1,0 +1,261 @@
+:root {
+  --verde-escuro: #174c33;
+  --amarelo: #ffd600;
+  --cinza-claro: #f5f5f5;
+  --branco: #fff;
+  --preto: #222;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: var(--cinza-claro);
+  color: var(--preto);
+}
+
+header {
+  background: var(--verde-escuro);
+  color: var(--branco);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.8em 2em;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.logo {
+  font-size: 1.3em;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* MENU HAMBURGUER */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.hamburger .bar {
+  width: 27px;
+  height: 4px;
+  background: var(--amarelo);
+  margin: 4px 0;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* NAV-LINKS padrão */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2em;
+  margin: 0;
+  padding: 0;
+  transition: right 0.3s;
+}
+
+.nav-links a {
+  color: var(--amarelo);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: var(--branco);
+}
+
+.hero {
+  background: linear-gradient(120deg, var(--verde-escuro) 60%, var(--amarelo) 100%);
+  color: var(--branco);
+  text-align: center;
+  padding: 5em 2em 4em 2em;
+}
+
+.hero h1 {
+  margin: 0 0 0.5em 0;
+  font-size: 2.5em;
+}
+
+.hero p {
+  font-size: 1.3em;
+  margin-bottom: 2em;
+}
+
+.btn-cta {
+  background: var(--amarelo);
+  color: var(--verde-escuro);
+  padding: 0.8em 2em;
+  border-radius: 25px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.2s;
+  box-shadow: 0 4px 12px rgba(23,76,51,0.09);
+}
+
+.btn-cta:hover {
+  background: #ffe45e;
+}
+
+.section {
+  max-width: 900px;
+  margin: 3em auto;
+  background: var(--branco);
+  padding: 2em 1.5em;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(23,76,51,0.07);
+}
+
+.section-alt {
+  background: var(--amarelo);
+  color: var(--verde-escuro);
+}
+
+.section h2 {
+  margin-top: 0;
+  font-size: 2em;
+  color: var(--verde-escuro);
+}
+
+.section-alt h2 {
+  color: var(--preto);
+}
+
+.section ul {
+  padding-left: 1.2em;
+}
+
+.clientes-lista {
+  display: flex;
+  gap: 1em;
+  margin-top: 1em;
+}
+
+.cliente {
+  background: var(--verde-escuro);
+  color: var(--amarelo);
+  padding: 0.5em 1.2em;
+  border-radius: 22px;
+  font-size: 1em;
+  font-weight: 500;
+}
+
+.contato-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  margin-top: 1em;
+}
+
+.contato-form input,
+.contato-form textarea {
+  padding: 0.7em;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1em;
+  background: var(--cinza-claro);
+  resize: none;
+}
+
+.contato-form textarea {
+  min-height: 80px;
+}
+
+.contato-form button {
+  background: var(--verde-escuro);
+  color: var(--amarelo);
+  padding: 0.9em 2.2em;
+  border: none;
+  border-radius: 22px;
+  font-size: 1.1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.contato-form button:hover {
+  background: #217d4d;
+}
+
+footer {
+  background: var(--verde-escuro);
+  color: var(--amarelo);
+  text-align: center;
+  padding: 1.2em 0;
+  margin-top: 5em;
+  font-size: 1em;
+  letter-spacing: 1px;
+}
+
+/* RESPONSIVO - MENU HAMBURGUER */
+@media (max-width: 700px) {
+  .navbar {
+    flex-direction: row;
+    gap: 0;
+    padding: 1em;
+  }
+  .logo {
+    flex: 1;
+  }
+  .hamburger {
+    display: flex;
+  }
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    right: -100vw;
+    flex-direction: column;
+    gap: 0;
+    background: var(--verde-escuro);
+    width: 70vw;
+    max-width: 320px;
+    height: calc(100vh - 60px);
+    padding: 2em 0 0 0;
+    box-shadow: -2px 0 14px rgba(23,76,51,0.18);
+    transition: right 0.3s;
+    z-index: 99;
+  }
+  .nav-links.open {
+    right: 0;
+  }
+  .nav-links li {
+    margin: 0 0 1.5em 0;
+    text-align: left;
+    padding-left: 2em;
+  }
+  .nav-links a {
+    font-size: 1.3em;
+    color: var(--amarelo);
+  }
+  .section {
+    padding: 1.2em 0.6em;
+  }
+  .hero {
+    padding: 3em 1em 2em 1em;
+  }
+}
+
+/* ANIMAÇÃO HAMBURGUER (opcional: 3 barras viram X) */
+.hamburger[aria-expanded="true"] .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.hamburger[aria-expanded="true"] .bar:nth-child(2) {
+  opacity: 0;
+}
+.hamburger[aria-expanded="true"] .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
